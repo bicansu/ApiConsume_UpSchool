@@ -1,0 +1,30 @@
+﻿@model List<CategoryViewModel>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<div class="container">
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Kategori Adı</th>
+            <th>Durumu</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CategoryID</td>
+                <td>@item.CategoryName</td>
+                <td>@item.Status</td>
+                <td><a href="/Default/DeleteCategory/@item.CategoryID" class="btn btn-outline-danger">Sil</a></td>
+                <td><a href="/Default/UpdateCategory/@item.CategoryID" class="btn btn-outline-Success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Default/AddCategory" class="btn btn-outline-primary">Yeni Kategori Girişi</a>
+</div>
+

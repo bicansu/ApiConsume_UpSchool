@@ -1,0 +1,18 @@
+﻿@model CategoryViewModel
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<form method="post">
+    <div class="container">
+        <input type="hidden" asp-for="CategoryID" />
+        <label>Kategori Adı</label>
+        <input type="text" class="form-control" asp-for="CategoryName"/>
+        <br />
+        <label>Kategori Açıklaması</label>
+        <input type="text" class="form-control" asp-for="Description" />
+        <br />
+        <button class="btn btn-outline-primary">Bilgileri Güncelle</button>
+    </div>
+</form>
